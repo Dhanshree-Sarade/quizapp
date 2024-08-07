@@ -1,0 +1,113 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body{
+	
+	margin: auto 0 50px	;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	/*background-color: #FFDEE9;
+	background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);*/
+
+}
+
+.wrapper{
+	height: 520px;
+	width: 510px;
+	background-color: #6e9ce5;
+	background-image: linear-gradient(180deg, #6e9ce5 0%, #FFBBEC 100%);
+
+	color: #fff;
+	border-radius: 12px;
+	padding: 30px 20px;
+	border-top: 5px solid blueviolet;
+	box-shadow: 0 0 7px 0px  rgba(0, 0, 0, 1.5) ;
+}
+
+.wrapper h1{
+	padding: 20px;
+	font-size: 35px;
+	text-align: center;
+}
+
+.wrapper input-box{
+	margin: 20px auto;	
+	position: relative;
+	width: 100%;
+	outline: none;
+	
+}
+
+/* Placeholder Text Styles */
+.input-box input::placeholder {
+	color: #333; /* Dark color for placeholder text */
+}
+
+.input-box input{
+	background-color: transparent;
+	border: none;
+	outline: none;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	font-size: 16px;
+	color: #fff;
+	padding-left: 5px;
+}
+
+.wrapper .input-box{
+	margin: 20px 0;
+	outline: none;
+	width: 100%;
+}
+
+#gender{
+	margin-right: 5px;
+}
+
+.wrapper .input-box .country{
+	display: inline-block;
+}
+
+button{
+	align-items: center;
+}
+
+
+.register-link p a:hover{
+		text-decoration: underline;
+	}
+	
+
+
+
+
+#otpVerificationSection {
+    margin-top: 20px;
+}
+
+#otpInput {
+    width: calc(100% - 50px); /* Adjust width to fit the container */
+}
+
+#verifyOtpButton {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

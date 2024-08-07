@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>404 Error</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	
+	<style>
+	       body {
+	           background-color: #f8f9fa;
+	       }
+	       .container {
+	           margin-top: 100px;
+	           text-align: center;
+	       }
+	       .error-code {
+	           font-size: 10rem;
+	           color: powderblue;
+	       }
+	       .error-message {
+	           font-size: 2rem;
+	           margin-bottom: 20px;
+	       }
+	       .btn-primary {
+	           background-color: #007bff;
+	           border-color: #007bff;
+	       }
+	       .btn-primary:hover {
+	           background-color: #0069d9;
+	           border-color: #0062cc;
+	       }
+	   </style>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<div class="container mt-5">
+	      <h1 class="error-code">404</h1>
+	      <p class="error-message">Oops! Page Not Found</p>
+	      <p class="error-details">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+	      <a th:href="@{/}" class="btn btn-primary">Go to Homepage</a>
+	  </div>
+	
+	
+	
+	
+	<script>
+	        $(document).ready(function() {
+	            function checkApiEndpoint(apiEndpoint) {
+	                $.ajax({
+	                    url: apiEndpoint,
+	                    type: 'GET',
+	                    success: function(data) {
+	                        // Handle success (your main content logic can go here)
+	                        console.log('API endpoint is valid');
+	                    },
+	                    error: function(xhr, status, error) {
+	                        if (xhr.status === 404) {
+	                            window.location.href = "/pageNotFound"; // Redirect to the error page
+	                        } else {
+	                            console.log('An error occurred: ' + xhr.responseText);
+	                        }
+	                    }
+	                });
+	            }
+	
+	            // Example usage
+	            checkApiEndpoint(window.location.href); // Check the current page URL for validity
+	        });
+	    </script>
+</body>
+</html>

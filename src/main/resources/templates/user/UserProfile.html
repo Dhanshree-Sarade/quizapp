@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>My Profile</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="user/assets/css/UserProfileCss.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="sidebar">
+		            <ul>
+		                <li><a 	th:href="@{/myTest}"> <i class="bi bi-clipboard2-check-fill"></i><b>My Attempted Tests</b></a></li>
+		                <li><a 	th:href="@{/home}"> <i class="bi bi-clipboard-fill"></i><b> All Tests</b></a></li>
+		                <li class="active"><a th:href="@{/user-profile}"> <i class="bi bi-person-circle"></i><b>My Account</b></a></li>
+		            </ul>
+		</div>
+
+
+		
+
+	<div class="main-content">
+	            <h1>My Account</h1>
+	           <!-- <p>Edit, update and manage your account details</p>
+	            <div class="profile-section">
+	                <div class="profile-pic">
+	                    <img src="default-profile.png" alt="Profile Picture">
+	                    <button>Browse</button>
+	                    <p>Size should be less than 500kb, only PNG/JPEG supported</p>
+	                </div>-->
+	                <form>
+						<input type="hidden" id="userId" readonly>
+	                    <div class="form-group">
+	                        	   <label for="full-name"><b>First Name*</b></label>
+	                        	   <input type="text" id="firstName" readonly>
+	                    </div>
+							
+						<div class="form-group">
+								   <label for="full-name"><b>Last Name*</b></label>
+								   <input type="text" id="lastName" readonly>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="password"><b>Password*</b></label>
+	                        <input type="password" id="password" readonly>
+							<i class="bi bi-eye-slash-fill toggle-password" id="toggleUserPassword"></i>
+	                       <!-- <button type="button">Change</button>-->
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="mobile-number"><b>Mobile number*</b></label>
+	                        <input type="text" id="mobile-number" readonly>
+	                        <!--<button type="button">Change</button>-->
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="email"><b>Email Address*</b></label>
+	                        <input type="email" id="email" readonly>
+	                        <!--<button type="button">Change</button>-->
+	                    </div>
+	                    <!--<div class="form-group">
+	                        <label for="state">State*</label>
+	                        <select id="state">
+	                            <option value="uttar-pradesh" selected>Uttar Pradesh</option>
+	                             Add other states as options here 
+	                        </select>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="city">City*</label>
+	                        <select id="city">
+	                            <option value="lucknow" selected>Lucknow</option>
+	                             Add other cities as options here 
+	                        </select>
+	                    </div>-->
+	                   <button class="button" type="button" id="editUserDetails"><b>Edit Profile</b></button>
+	                </form>
+	            </div>
+	        </div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="exampleModalLabel"><b>Edit User Details</b></h5>
+	                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	            </div>
+	            <div class="modal-body">
+	                <input type="hidden" id="userId1" placeholder="User Id is ">
+					<div class="mb-3">
+						<label for="firstName" class="form-label"><b>First Name:</b></label>
+						<input type="text" class="form-control" id="firstName1" placeholder="Enter First Name">
+					</div>
+					<div class="mb-3">
+						<label for="lastName" class="form-label"><b>Last Name:</b></label>
+						<input type="text" class="form-control" id="lastName1" placeholder="Enter Last Name">
+					</div>
+	                <div class="mb-3">
+	                    <label for="mobileNum" class="form-label"><b>Mobile Number:</b></label>
+	                    <input type="text" class="form-control" id="mobileNum1" placeholder="Enter mobile number">
+	                </div>
+	                <div class="mb-3">
+	                    <label for="password" class="form-label"><b>Password:</b></label>
+	                    <input type="password" class="form-control" id="password1" placeholder="Enter new password">
+	                </div>
+	                <div class="mb-3">
+	                    <label for="confirmPassword" class="form-label"><b>Confirm Password:</b></label>
+	                    <input type="password" class="form-control" id="confirmPassword1" placeholder="Confirm password">
+	                </div>
+					<div class="mb-3">
+						<label for="email" class="form-label"><b>Email Id:</b></label>
+						<input type="email" class="form-control" id="email1" placeholder="Enter Email Id">
+					</div>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	                <button type="button" class="btn btn-primary" id="saveChanges">Save changes</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	
+	
+	
+	<script>
+			   const toggleUserPassword = document.getElementById('toggleUserPassword');
+		       const password = document.getElementById('password');
+		
+			   toggleUserPassword.addEventListener('click', function (e) {
+		           // Toggle the type attribute
+		           const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+		           password.setAttribute('type', type);
+		           
+		           // Toggle the eye slash icon
+		           this.classList.toggle('bi-eye');
+		       });
+	
+	</script>
+	
+	
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="./user/assets/js/UserProfileJs.js"></script>
+</body>
+</html>

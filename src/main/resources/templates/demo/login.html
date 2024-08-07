@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+<title>Login Page</title>
+<link rel="stylesheet" href="css/myStyle.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<form action="#" th:action="@{login}" th:object="${admin}" method="post">
+		<h1>Login</h1>
+		<div class="input-box">
+			<input type="hidden" name="id">
+			<i class="bi bi-person-fill" id="iconP"></i>
+			<input type="text" placeholder="Username" required name="username">
+			
+		</div>
+		<div class="input-box">
+			<i class="bi bi-lock-fill" id="iconL"></i>
+			<input type="password" placeholder="Password" required name="password" 	id="password">
+			<i class="bi bi-eye-slash-fill toggle-password" id="togglePassword"></i>
+		</div>
+		
+		<div class="remember-forgot">
+			<!--<label><input type="checkbox">Remember Me</label>
+			<a href="#">Forgot Password</a>-->
+		</div>
+		<button type="submit" class="btn" id="login">Login</button>
+		<div class="register-link">
+			<!--<p>Don't have an account? <a href="#">Register </a></p>-->
+		</div>
+	</form>
+	
+</div>
+
+<script>
+		   const togglePassword = document.getElementById('togglePassword');
+	       const password = document.getElementById('password');
+	
+	       togglePassword.addEventListener('click', function (e) {
+	           // Toggle the type attribute
+	           const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+	           password.setAttribute('type', type);
+	           
+	           // Toggle the eye slash icon
+	           this.classList.toggle('bi-eye');
+	       });
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="js/myScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>

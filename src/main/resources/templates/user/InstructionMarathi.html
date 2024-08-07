@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz Layout</title>
+	<!-- Slick CSS -->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+	<link rel="stylesheet" href="user/assets/css/ExamCss.css">
+	<link rel="stylesheet" href="user/assets/css/style.css">
+
+
+	<style>
+		.quiz {
+			width: 100%;
+			height: 100%;
+			max-width: 1200px;
+			margin: auto;
+			font-family: Arial, sans-serif;
+			padding: 20px;
+		}
+
+		.quiz_item {
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			padding: 16px;
+			background-color: #f9f9f9;
+			min-width: 290px;
+			margin: 0 8px;
+		}
+
+		.quiz_header {
+			font-size: 1.2em;
+			font-weight: bold;
+			margin-bottom: 8px;
+		}
+
+		.quiz_content {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 16px;
+		}
+
+		.quiz_detail {
+			font-size: 1em;
+			color: #555;
+		}
+
+		.quiz_footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.quiz_stat {
+			font-size: 1.2em;
+			color: #000;
+		}
+
+		.quiz_button {
+			padding: 8px 16px;
+			font-size: 1em;
+			color: #fff;
+			background-color: #007bff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		.quiz_button:hover {
+			background-color: #0056b3;
+		}
+
+		.quiz_span {
+			display: inline;
+			padding-right: 250px;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div class="instruction-container">
+		<div class="header-info">
+			<h2>Candidate Name: <span id="candidateName">John Doe</span></h2>
+			<h2>Topic Name: <span id="topicName">Sample Topic</span></h2>
+		</div>
+
+
+		<ul id="instruction-list">
+			<h2>सूचना: काळजीपूर्वक वाचा </h2>
+			<hr>
+			<li><strong>तुमची उपकरणे तपासा:</strong>
+				<ul>
+					<li>तुमचा संगणक, इंटरनेट कनेक्शन आणि कोणतेही आवश्यक सॉफ्टवेअर (विशिष्ट ब्राउझरसारखे) योग्यरित्या काम करत असल्याची खात्री करा.</li>
+					<li>मोबाइल हॉटस्पॉट किंवा पर्यायी उपकरणासारख्या तांत्रिक समस्यांच्या बाबतीत बॅकअप योजना घ्या.
+					</li>
+				</ul>
+			</li>
+			<li><strong>तुमचे कार्यक्षेत्र तयार करा:</strong>
+				<ul>
+					<li>विचलनापासून मुक्त, शांत, आरामदायी ठिकाणी सेट करा.</li>
+					<li>तुमच्याकडे सर्व आवश्यक साहित्य जसे की स्क्रॅच पेपर, पेन आणि कोणतीही परवानगी असलेली संदर्भ सामग्री असल्याची खात्री करा.</li>
+				</ul>
+			</li>
+			<li><strong>लवकर लॉग इन करा:</strong>
+				<ul>
+					<li>कोणत्याही शेवटच्या क्षणी तांत्रिक समस्या हाताळण्यासाठी प्रारंभ वेळेच्या किमान 15-20 मिनिटे आधी परीक्षा प्लॅटफॉर्मवर लॉग इन करा.</li>
+				</ul>
+			</li>
+			<li><strong>परीक्षा मार्गदर्शक तत्त्वांचे पुनरावलोकन करा:</strong>
+				<ul>
+					<li>परीक्षेच्या सूचना आणि मार्गदर्शक तत्त्वे काळजीपूर्वक वाचा, म्हणजे तुम्हाला नियम आणि स्वरूप समजेल.</li>
+				</ul>
+			</li>
+		</ul>
+
+		<ul>
+			<li><strong>प्रश्न काळजीपूर्वक वाचा:</strong>
+				<ul>
+					<li>उत्तर निवडण्यापूर्वी प्रत्येक प्रश्न आणि सर्व उत्तर निवडी नीट वाचण्यासाठी तुमचा वेळ घ्या.</li>
+				</ul>
+			</li>
+			<li><strong>प्रथम सोप्या प्रश्नांची उत्तरे द्या:</strong>
+				<ul>
+					<li>तुम्हाला विश्वास असल्याच्या प्रश्नांची झटपट उत्तरे द्या, नंतर आणखी कठीण प्रश्नांकडे परत या.
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+
+		<ul>
+			<li><strong>दोन-पास धोरण:</strong>
+				<ul>
+					<li>पहिला पास: तुम्हाला माहीत असलेल्या प्रश्नांची उत्तरे पटकन द्या.</li>
+					<li>दुसरा पास: उर्वरित वेळेसह अधिक कठीण प्रश्नांकडे परत या.</li>
+				</ul>
+			</li>
+			<li><strong>प्रति प्रश्न वेळ वाटप करा:</strong>
+				<ul>
+					<li>परीक्षेत 60 मिनिटे आणि 60 प्रश्न असल्यास, प्रत्येक प्रश्नासाठी 1 मिनिटापेक्षा जास्त वेळ घालवण्याचे लक्ष्य ठेवा.
+					</li>
+				</ul>
+			</li>
+			<li><strong>घड्याळावर लक्ष ठेवा:</strong>
+				<ul>
+					<li>ट्रॅकवर राहण्यासाठी नियमितपणे वेळ तपासा. कोणत्याही एका प्रश्नावर जास्त वेळ घालवणे टाळा.
+					</li>
+				</ul>
+			</li>
+			<li><strong>वेळ अनुमती देत ​​असल्यास पुनरावलोकन करा:</strong>
+				<ul>
+					<li>तुम्ही लवकर पूर्ण केल्यास, तुमच्या उत्तरांचे पुनरावलोकन करण्यासाठी उरलेला वेळ वापरा आणि तुमच्याकडून कोणतेही प्रश्न चुकले नाहीत किंवा चुका झाल्या नाहीत याची खात्री करा.</li>
+				</ul>
+			</li>
+		</ul>
+
+
+		<div id="questions-container">
+			<!--<h1>Questions Set</h1>-->
+			<hr>
+			<button class="btn" id="takeTest">Start Exam</button>
+			<div id="timer" style="display: none;">Time Remaining: <span id="time">01:00</span></div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- Slick JS -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	
+	<script src="./user/assets/js/UserTopicScript.js"></script>
+	<script src="./user/assets/js/UserQuestionsScript.js"></script>
+</body>
+
+</html>

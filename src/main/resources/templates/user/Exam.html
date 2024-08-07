@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz Layout</title>
+	<!-- Slick CSS -->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+	<link rel="stylesheet" href="user/assets/css/ExamCss.css">
+	<link rel="stylesheet" href="user/assets/css/style.css">
+
+
+	<style>
+		.quiz {
+			width: 100%;
+			height: 100%;
+			max-width: 1200px;
+			margin: auto;
+			font-family: Arial, sans-serif;
+			padding: 20px;
+		}
+
+		.quiz_item {
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			padding: 16px;
+			background-color: #f9f9f9;
+			min-width: 290px;
+			margin: 0 8px;
+		}
+
+		.quiz_header {
+			font-size: 1.2em;
+			font-weight: bold;
+			margin-bottom: 8px;
+		}
+
+		.quiz_content {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 16px;
+		}
+
+		.quiz_detail {
+			font-size: 1em;
+			color: #555;
+		}
+
+		.quiz_footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.quiz_stat {
+			font-size: 1.2em;
+			color: #000;
+		}
+
+		.quiz_button {
+			padding: 8px 16px;
+			font-size: 1em;
+			color: #fff;
+			background-color: #007bff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		.quiz_button:hover {
+			background-color: #0056b3;
+		}
+
+		.quiz_span {
+			display: inline;
+			padding-right: 250px;
+		}
+	</style>
+</head>
+
+<body>
+	<!--<div class="quiz">
+		
+		<div class="quiz_item">
+				            <div class="quiz_header">JEE Main Advanced- Quiz (25/May/2024)</div>
+				            <div class="quiz_content">
+								<div class="quiz_detail">				
+													
+													<p class="quiz_detail">
+															<span class="quiz_span">Question</span> 
+															<span >10</span>
+													</p>
+													<p class="quiz_detail">
+															<span class="quiz_span">Marks</span> 
+															<span >10</span>
+													</p>
+													<p class="quiz_detail">
+															<span class="quiz_span">Minute</span> 
+															<span >10</span>
+															
+													</p>
+													
+												</div>
+				            </div>
+				            <div class="quiz_footer">
+				                <button class="quiz_button">Start Quiz</button>
+				            </div>
+				        </div>
+		
+		
+        <div class="quiz_item">
+            <div class="quiz_header">JEE Main Advanced Quiz (30/May/2024)</div>
+            <div class="quiz_content">
+				<div class="quiz_detail">				
+									
+									<p class="quiz_detail">
+											<span class="quiz_span">Question</span> 
+											<span >20</span>
+									</p>
+									<p class="quiz_detail">
+											<span class="quiz_span">Marks</span> 
+											<span >20</span>
+									</p>
+									<p class="quiz_detail">
+											<span class="quiz_span">Minute</span> 
+											<span >10</span>
+									</p>
+									
+								</div>
+            </div>
+            <div class="quiz_footer">
+                <div class="quiz_stat">0</div>
+                <button class="quiz_button">Start Quiz</button>
+            </div>
+        </div>
+
+        <div class="quiz_item">
+            <div class="quiz_header">JEE Main Advanced Quiz (29/May/2024)</div>
+            <div class="quiz_content">
+                <div class="quiz_detail">				
+					
+					<p class="quiz_detail">
+							<span class="quiz_span">Question</span> 
+							<span >20</span>
+					</p>
+					<p class="quiz_detail">
+							<span class="quiz_span">Marks</span> 
+							<span >20</span>
+					</p>
+					<p class="quiz_detail">
+							<span class="quiz_span">Minute</span> 
+							<span >10</span>
+					</p>
+					
+				</div>
+            </div>
+            <div class="quiz_footer">
+                <div class="quiz_stat">0</div>
+                <button class="quiz_button">Start Quiz</button>
+            </div>
+        </div>
+
+        <div class="quiz_item">
+            <div class="quiz_header">JEE Main Advanced - Quiz (28/May/2024)</div>
+            <div class="quiz_content">
+				<div class="quiz_detail">				
+									
+									<p class="quiz_detail">
+											<span class="quiz_span">Question</span> 
+											<span >20</span>
+									</p>
+									<p class="quiz_detail">
+											<span class="quiz_span">Marks</span> 
+											<span >20</span>
+									</p>
+									<p class="quiz_detail">
+											<span class="quiz_span">Minute</span> 
+											<span >10</span>
+									</p>
+									
+								</div>
+            </div>
+            <div class="quiz_footer">
+                <button class="quiz_button">Start Quiz</button>
+            </div>
+        </div>
+
+        <div class="quiz_item">
+            <div class="quiz_header">JEE Main Advanced- Quiz (25/May/2024)</div>
+            <div class="quiz_content">
+				<div class="quiz_detail">				
+									
+									<p class="quiz_detail">
+											<span class="quiz_span">Question</span> 
+											<span >20</span>
+									</p>
+									<p class="quiz_detail">
+											<span class="quiz_span">Marks</span> 
+											<span >20</span>
+									</p>
+									<p class="quiz_detail">
+											<span class="quiz_span">Minute</span> 
+											<span >10</span>
+									</p>
+									
+								</div>
+            </div>
+            <div class="quiz_footer">
+                <button class="quiz_button">Start Quiz</button>
+            </div>
+        </div>
+		
+		<div class="quiz_item">
+		            <div class="quiz_header">JEE Main Advanced- Quiz (25/May/2024)</div>
+		            <div class="quiz_content">
+						<div class="quiz_detail">				
+											
+											<p class="quiz_detail">
+													<span class="quiz_span">Question</span> 
+													<span >20</span>
+											</p>
+											<p class="quiz_detail">
+													<span class="quiz_span">Marks</span> 
+													<span >20</span>
+											</p>
+											<p class="quiz_detail">
+													<span class="quiz_span">Minute</span> 
+													<span >10</span>
+											</p>
+											
+										</div>
+		            </div>
+		            <div class="quiz_footer">
+		                <button class="quiz_button">Start Quiz</button>
+		            </div>
+		        </div>
+				
+				<div class="quiz_item">
+				            <div class="quiz_header">JEE Main Advanced- Quiz (25/May/2024)</div>
+				            <div class="quiz_content">
+								<div class="quiz_detail">				
+													
+													<p class="quiz_detail">
+															<span class="quiz_span">Question</span> 
+															<span >20</span>
+													</p>
+													<p class="quiz_detail">
+															<span class="quiz_span">Marks</span> 
+															<span >20</span>
+													</p>
+													<p class="quiz_detail">
+															<span class="quiz_span">Minute</span> 
+															<span >10</span>
+													</p>
+													
+												</div>
+				            </div>
+				            <div class="quiz_footer">
+				                <button class="quiz_button">Start Quiz</button>
+				            </div>
+				        </div>
+						
+    </div>-->
+
+
+
+
+	<!-- <div class="card">
+	                           <div class="card-body">
+								<p>
+								<span>1</span>
+	                               <span>Question</span></p>
+	                               <div class="basic-form">
+	                                   <form>
+	                                       <div class="form-group">
+	                                           <div class="radio mb-3">
+	                                               <label>
+	                                                   <input type="radio" name="optradio">Option 1</label>
+	                                           </div>
+	                                           <div class="radio mb-3">
+	                                               <label>
+	                                                   <input type="radio" name="optradio">Option 2</label>
+	                                           </div>
+	                                           <div class="radio mb-3">
+	                                               <label>
+	                                                   <input type="radio" name="optradio">Option 3</label>
+	                                           </div>
+											   <div class="radio mb-3">
+											   	   <label>
+											   	       <input type="radio" name="optradio">Option 3</label>
+											  </div>
+	                                       </div>
+	                                   </form>
+	                               </div>
+	                           </div>
+	                       </div>
+	-->
+
+	
+
+
+	<div class="instruction-container">
+		<div class="header-info">
+			<h2>Candidate Name: <span id="candidateName">John Doe</span></h2>
+			<h2>Topic Name: <span id="topicName">Sample Topic</span></h2>
+		</div>
+
+
+		<ul id="instruction-list">
+			<h2>Instructions: Read Carefully </h2>
+			<hr>
+			<li><strong>Check Your Equipment:</strong>
+				<ul>
+					<li>Ensure your computer, internet connection, and any required software (like a specific browser)
+						are working properly.</li>
+					<li>Have a backup plan in case of technical issues, such as a mobile hotspot or an alternate device.
+					</li>
+				</ul>
+			</li>
+			<li><strong>Prepare Your Workspace:</strong>
+				<ul>
+					<li>Set up in a quiet, comfortable location free from distractions.</li>
+					<li>Make sure you have all necessary materials, like scratch paper, pens, and any allowed reference
+						materials.</li>
+				</ul>
+			</li>
+			<li><strong>Login Early:</strong>
+				<ul>
+					<li>Log in to the exam platform at least 15-20 minutes before the start time to handle any
+						last-minute technical issues.</li>
+				</ul>
+			</li>
+			<li><strong>Review Exam Guidelines:</strong>
+				<ul>
+					<li>Read through the exam instructions and guidelines carefully, so you understand the rules and
+						format.</li>
+				</ul>
+			</li>
+		</ul>
+
+		<ul>
+			<li><strong>Read Questions Carefully:</strong>
+				<ul>
+					<li>Take your time to read each question and all the answer choices thoroughly before selecting an
+						answer.</li>
+				</ul>
+			</li>
+			<li><strong>Answer Easy Questions First:</strong>
+				<ul>
+					<li>Quickly answer questions you are confident about, then return to more difficult questions later.
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+
+		<ul>
+			<li><strong>Two-Pass Strategy:</strong>
+				<ul>
+					<li>First Pass: Answer questions you know quickly.</li>
+					<li>Second Pass: Return to more difficult questions with the remaining time.</li>
+				</ul>
+			</li>
+			<li><strong>Allocate Time Per Question:</strong>
+				<ul>
+					<li>If the exam has 60 minutes and 60 questions, aim to spend no more than 1 minute per question.
+					</li>
+				</ul>
+			</li>
+			<li><strong>Keep an Eye on the Clock:</strong>
+				<ul>
+					<li>Regularly check the time to stay on track. Avoid spending too much time on any single question.
+					</li>
+				</ul>
+			</li>
+			<li><strong>Review if Time Allows:</strong>
+				<ul>
+					<li>If you finish early, use the remaining time to review your answers and ensure you haven’t missed
+						any questions or made any mistakes.</li>
+				</ul>
+			</li>
+		</ul>
+
+
+		<div id="questions-container">
+			<!--<h1>Questions Set</h1>-->
+			<hr>
+			<button class="btn" id="takeTest">Start Exam</button>
+			<div id="timer" style="display: none;">Time Remaining: <span id="time">30:00</span></div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- Slick JS -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.dropdown-item').on('click', function (e) {
+				e.preventDefault();
+				const language = $(this).data('value');
+				translateInstructions(language);
+			});
+		});
+
+		function translateInstructions(language) {
+			const instructions = `
+	                Check Your Equipment: Ensure your computer, internet connection, and any required software (like a specific browser) are working properly. Have a backup plan in case of technical issues, such as a mobile hotspot or an alternate device.
+	                Prepare Your Workspace: Set up in a quiet, comfortable location free from distractions. Make sure you have all necessary materials, like scratch paper, pens, and any allowed reference materials.
+	                Login Early: Log in to the exam platform at least 15-20 minutes before the start time to handle any last-minute technical issues.
+	                Review Exam Guidelines: Read through the exam instructions and guidelines carefully, so you understand the rules and format.
+	                Read Questions Carefully: Take your time to read each question and all the answer choices thoroughly before selecting an answer.
+	                Answer Easy Questions First: Quickly answer questions you are confident about, then return to more difficult questions later.
+	                Two-Pass Strategy: First Pass: Answer questions you know quickly. Second Pass: Return to more difficult questions with the remaining time.
+	                Allocate Time Per Question: If the exam has 60 minutes and 60 questions, aim to spend no more than 1 minute per question.
+	                Keep an Eye on the Clock: Regularly check the time to stay on track. Avoid spending too much time on any single question.
+	                Review if Time Allows: If you finish early, use the remaining time to review your answers and ensure you haven’t missed any questions or made any mistakes.
+	            `;
+
+			$.ajax({
+				type: "POST",
+				contentType: "application/json",
+				url: '/translate',
+				data: JSON.stringify({text: instructions, targetLanguage: language}),
+				dataType: 'json',
+				success: function (data) {
+					const translatedText = JSON.parse(data).data.translations[0].translatedText;
+					updateInstructions(translatedText);
+				},
+				error: function (error) {
+					console.error("Error translating instructions", error);
+				}
+			});
+		}
+
+		function updateInstructions(translatedText) {
+			const instructionList = $('#instruction-list');
+			instructionList.empty();
+
+			const instructions = translatedText.split('.').filter(Boolean);
+			instructions.forEach(instruction => {
+				instructionList.append(`<li>${instruction.trim()}.</li>`);
+			});
+		}
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('.quiz').slick({
+				dots: true,
+				loop: true,
+				speed: 300,
+				slidesToShow: 3,
+				prevArrow: '<button class="slick-prev">Previous</button>',
+				nextArrow: '<button class="slick-next">Next</button>',
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 1,
+							infinite: true,
+							dots: true
+						}
+					},
+					{
+						breakpoint: 800,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 1
+						}
+					},
+					{
+						breakpoint: 800,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+					}
+				]
+			});
+		});
+	</script>
+
+	<script src="./user/assets/js/UserTopicScript.js"></script>
+	<script src="./user/assets/js/UserQuestionsScript.js"></script>
+</body>
+
+</html>

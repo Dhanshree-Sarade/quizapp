@@ -1,0 +1,218 @@
+/*background-image: linear-gradient(to right top, #dc5da5, #cd6dbb, #ba7ccc, #a789d7, #9495dc, #8c98df, #839ce2, #7a9fe4, #749dea, #6d9bf0, #6699f5, #5f97fb);
+    */
+/*
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 40px;	
+	
+}
+
+.container{
+	background-color: #fff;
+	width: 800px;
+	max-width: 800px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	padding: 25px 40px 10px 40px;
+}
+
+.container .text{
+	font-size: 35;
+	font-weight: 600;
+	text-align: center;
+	background-image: linear-gradient(to right top, #682cc0, #8e3bba, #a94eb6, #bd64b4, #cc7cb5, #d77eb0, #e181ab, #ea85a6, #f4728d, #f9606f, #f8514b, #f0491f);
+	
+}
+
+.container form{
+	padding: 30px 0 0 0 0;
+	
+}
+
+.profileForm{
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e3cee3;
+background-image: linear-gradient(90deg, #e3cee3 0%, #b4dadf 100%);
+
+}
+.container {
+    display: flex;
+    width: 80%;
+    height: 100vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* .sidebar ul li.active a {
+    font-weight: bold;
+} */
+
+.download-app {
+    margin-top: 50px;
+}
+
+.download-app h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.download-app p {
+    font-size: 14px;
+    color: #555;
+}
+
+.download-app a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.download-app img {
+    width: 150px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.main-content h1 {
+    margin-top: 0;
+}
+
+.profile-section {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-pic {
+    text-align: center;
+}
+
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.profile-pic button {
+    display: block;
+    margin: 10px 0;
+}
+
+form {
+    flex-grow: 1;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-right: 30px;
+    position: relative;
+}
+
+.form-group .toggle-password {
+    position: absolute;
+    right: 52%; /* Adjust to ensure it's inside the input field */
+    top: 40px; /* Adjust to vertically center it in the input field */
+    cursor: pointer;
+}
+
+.form-group button {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.button {
+    background-color: rgb(31, 135, 220);
+}
+
+.form-group button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+.form-group input[readonly] {
+    background-color: #e9ecef;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,153 @@
+<!--<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+<title>Login Page</title>
+<link rel="stylesheet" href="user/assets/css/userCss.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+	<form action="#" th:action="@{login}" th:object="${admin}" method="post">
+		<h1>Login</h1>
+		<div class="input-box">
+			<input type="hidden" name="id">
+			<i class="bi bi-person-fill"></i>
+			<input type="text" placeholder="Email" required name="email">
+			
+		</div>
+		<div class="input-box">
+			<i class="bi bi-lock-fill"></i>
+			<input type="password" placeholder="Password" required name="password" id="password">
+			<i class="bi bi-eye-slash-fill toggle-password" id="togglePassword"></i>
+		</div>
+		
+		<div class="remember-forgot">
+			<label><input type="checkbox">Remember Me</label>
+			<a href="#">Forgot Password</a>				
+		</div>
+		<button type="submit" class="btn" id="login">Login</button>
+		<div class="register-link">
+			<p>Don't have an account? <a th:href="@{/registration}">Register </a></p>
+		</div>
+	</form>
+	
+</div>
+
+
+
+<script>
+		   const togglePassword = document.getElementById('togglePassword');
+	       const password = document.getElementById('password');
+	
+	       togglePassword.addEventListener('click', function (e) {
+	           // Toggle the type attribute
+	           const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+	           password.setAttribute('type', type);
+	           
+	           // Toggle the eye slash icon
+	           this.classList.toggle('bi-eye');
+	       });
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./user/assets/js/UScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+<title>Login Page</title>
+<link rel="stylesheet" href="user/assets/css/userCss.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <form action="#" th:action="@{login}" th:object="${admin}" method="post" id="loginForm">
+        <h1>Login</h1>
+        <div class="input-box">
+            <input type="hidden" name="id">
+            <i class="bi bi-person-fill"></i>
+            <input type="text" placeholder="Email" required name="email">
+        </div>
+        <div class="input-box">
+            <i class="bi bi-lock-fill"></i>
+            <input type="password" placeholder="Password" required name="password" id="password">
+            <i class="bi bi-eye-slash-fill toggle-password" id="togglePassword"></i>
+        </div>
+        
+        <div class="remember-forgot">
+            <a href="#" id="forgotPasswordLink">Forgot Password</a>
+        </div>
+        <button type="submit" class="btn" id="login">Login</button>
+        <div class="register-link">
+            <p>Don't have an account? <a th:href="@{/registration}">Register </a></p>
+        </div>
+    </form>
+    
+    <div id="forgotPasswordSection" style="display: none;">
+        <h1>Forgot Password</h1>
+        <div class="input-box">
+            <i class="bi bi-envelope"></i>
+            <input type="email" placeholder="Enter your email" required id="forgotEmail">
+			</div>
+			<div class="input-box">
+            <button type="button" class="btn" id="sendOtpButton">Send OTP</button>
+        </div>
+    </div>
+    
+    <div id="otpVerificationSection" style="display: none;">
+        <h1>Verify OTP</h1>
+        <div class="input-box">
+            <i class="bi bi-shield-lock"></i>
+            <input type="text" placeholder="Enter OTP" required id="otpInput">
+			</div>
+			<div class="input-box">
+            <button type="button" class="btn" id="verifyOtpButton">Verify OTP</button>
+        </div>
+    </div>
+    
+    <div id="changePasswordSection" style="display: none;">
+        <h1>Change Password</h1>
+        <div class="input-box">
+            <i class="bi bi-lock-fill"></i>
+            <input type="password" placeholder="New Password" required id="newPassword">
+        </div>
+        <div class="input-box">
+            <i class="bi bi-lock-fill"></i>
+            <input type="password" placeholder="Confirm New Password" required id="confirmNewPassword">
+        </div>
+        <button type="button" class="btn" id="changePasswordButton">Change Password</button>
+    </div>
+</div>
+
+<script>
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function (e) {
+        // Toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        
+        // Toggle the eye slash icon
+        this.classList.toggle('bi-eye');
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./user/assets/js/UScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+</body>
+</html>

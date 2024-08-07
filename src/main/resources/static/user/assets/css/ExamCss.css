@@ -1,0 +1,140 @@
+ /* ******this is exam page css *************** */
+
+.instruction-container{
+	padding: 20px;
+	display: grid;
+	justify-content: center;
+}
+
+#questions-container{
+	display: grid;
+	justify-content: center;
+}
+
+
+/* ********************************************* */
+
+/* .quiz {
+    display: flex;
+    overflow-x: auto;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.quiz_item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    min-width: 290px;
+    margin: 0 8px;
+    flex-shrink: 0;
+        width: 30%;
+    height: 300px;
+}
+
+
+
+.quiz_content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+
+
+
+
+.quiz_span {
+    display: inline-block;
+    width: 150px; 
+        margin-right: 100px;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .card{
+		margin: 20px 0;
+		background-color: #fff;
+		padding: 30px 20px;
+		position: relative;
+		z-index: 1;
+	}
+	
+	.container {
+	            max-width: 1200px;
+	            margin: auto;
+	            padding: 20px;
+	            box-sizing: border-box;
+	 }
+	.slider .col-md-12 {
+		        padding: 0 10px;  
+	 }
+ */
+
+
+.card {
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.container-topic {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.quiz_header {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+        text-align: center;
+}
+
+.quiz_detail {
+    font-size: 1.2em;
+    color: #555;
+    margin-left: 50px;
+    font-size: large;
+}
+
+.quiz_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quiz_button {
+    padding: 8px 16px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quiz_button:hover {
+    background-color: #0056b3;
+}
+
+.owl-prev, .owl-next {
+	background-color: red;
+}

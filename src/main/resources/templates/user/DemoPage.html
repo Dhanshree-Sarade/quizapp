@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Status Indicators</title>
+	<style>
+		.status-container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			background-color: #3e4a67;
+			padding: 20px;
+			border-radius: 8px;
+			color: white;
+			font-family: Arial, sans-serif;
+		}
+
+		.status-item {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			padding: 5px 10px;
+			border-radius: 4px;
+		}
+
+		.attempted {
+			background-color: #4caf50;
+		}
+
+		.marked {
+			background-color: #ffeb3b;
+			color: #000;
+		}
+
+		.not-visited {
+			background-color: #ffffff;
+			color: #000;
+		}
+
+		.not-answered {
+			background-color: #f44336;
+		}
+
+		.marked-answered {
+			background-color: #ffeb3b;
+			color: #000;
+		}
+
+		.status-text {
+			margin-left: 10px;
+		}
+
+		.checkmark {
+			position: relative;
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+		}
+
+		.checkmark:after {
+			content: '';
+			position: absolute;
+			left: 6px;
+			top: 2px;
+			width: 4px;
+			height: 9px;
+			border: solid green;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="status-container">
+		<div class="status-item attempted">
+			<div>0</div>
+			<div class="status-text">Attempted</div>
+		</div>
+		<div class="status-item marked">
+			<div>0</div>
+			<div class="status-text">Marked</div>
+		</div>
+		<div class="status-item not-visited">
+			<div>19</div>
+			<div class="status-text">Not Visited</div>
+		</div>
+		<div class="status-item not-answered">
+			<div>1</div>
+			<div class="status-text">Not Answered</div>
+		</div>
+		<div class="status-item marked-answered">
+			<div>0</div>
+			<div class="checkmark"></div>
+			<div class="status-text">Marked & Answered</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

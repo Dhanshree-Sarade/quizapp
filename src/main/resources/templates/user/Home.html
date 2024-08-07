@@ -1,0 +1,441 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Online Exam Portal</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="manifest" href="site.webmanifest">-->
+	<link rel="shortcut icon" type="image/x-icon" href="user/assets/img/favicon.ico">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="user/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="user/assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="user/assets/css/slicknav.css">
+	<link rel="stylesheet" href="user/assets/css/flaticon.css">
+	<link rel="stylesheet" href="user/assets/css/progressbar_barfiller.css">
+	<link rel="stylesheet" href="user/assets/css/gijgo.css">
+	<link rel="stylesheet" href="user/assets/css/animate.min.css">
+	<link rel="stylesheet" href="user/assets/css/animated-headline.css">
+	<link rel="stylesheet" href="user/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="user/assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="user/assets/css/themify-icons.css">
+	<link rel="stylesheet" href="user/assets/css/slick.css">
+	<link rel="stylesheet" href="user/assets/css/nice-select.css">
+	<link rel="stylesheet" href="user/assets/css/style.css">
+	<link rel="stylesheet" href="user/assets/css/ExamCss.css">
+	<link rel="stylesheet" href="user/assets/css/HomeCss.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+	<!-- ? Preloader Start -->
+	<div id="preloader-active">
+		<div class="preloader d-flex align-items-center justify-content-center">
+			<div class="preloader-inner position-relative">
+				<div class="preloader-circle"></div>
+				<div class="preloader-img pere-text">
+					<img src="user/assets/img/logo/loder.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Preloader Start -->
+	<header th:fragment="User-nav-header">
+		<!-- Header Start -->
+		<div class="header-area header-transparent">
+			<div class="main-header ">
+				<div class="header-bottom  header-sticky">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<!-- Logo -->
+							<div class="col-xl-2 col-lg-2">
+								<div class="logo">
+									<a href="index.html"><img src="user/assets/img/logo/logo.png" alt=""></a>
+								</div>
+							</div>
+							<div class="col-xl-10 col-lg-10">
+								<div class="menu-wrapper d-flex align-items-center justify-content-end">
+									<!-- Main-menu -->
+									<ul class="main-menu d-none d-lg-block">
+										<nav>
+											<ul id="navigation">
+												<li class="active"><a href="index.html">Home</a></li>
+												<li><a href="courses.html">Courses</a></li>
+												<li><a href="about.html">About</a></li>
+												<li><a href="#">Blog</a>
+													<ul class="submenu">
+														<li><a href="blog.html">Blog</a></li>
+														<li><a href="blog_details.html">Blog Details</a></li>
+														<li><a href="elements.html">Element</a></li>
+													</ul>
+												</li>
+												<li><a href="contact.html">Contact</a></li>
+												<!-- Button -->
+												<!--<li class="button-header margin-left "><a href="#" class="btn">Join</a></li>-->
+												<!--<li class="button-header"><a th:href="@{/UserLogin}" class="btn btn3">Log in</a></li>
+												-->
+
+
+												<!--<li class="dropdown">
+												<span th:if="${session.loggedInUser != null}">
+												        <a href="/logout" class="btn btn3">Log out 	(<span th:text="${session.loggedInUser.firstName}"></span>)</a>
+												</span>
+												<span th:if="${session.loggedInUser == null}">
+												        <a th:href="@{/UserLogin}" class="btn btn3">Log in</a>
+												</span>
+												</li>-->
+
+
+												<!-- User dropdown menu -->
+												<!--<li th:if="${session.loggedInUser != null}" class="nav-item dropdown">
+													<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+														role="button" data-toggle="dropdown" aria-haspopup="true"
+														aria-expanded="false">
+														<span
+															th:text="${session.loggedInUser.firstName} + ' ' + ${session.loggedInUser.lastName}">User
+															Name</span>
+													</a>
+													<ul class="submenu">
+														<li><a th:href="@{/user-profile}">My Profile</a></li>
+														<li><a id="logoutButton" th:href="@{/logout}">Logout</a></li>
+													</ul>
+												</li>
+												<li th:if="${session.loggedInUser == null}" class="nav-item">
+													<a class="nav-link" th:href="@{/UserLogin}">Log in</a>
+												</li>-->
+												
+												<li id="userDropdown" class="nav-item dropdown" style="display: none;">
+													<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+														aria-haspopup="true" aria-expanded="false">
+														<span id="candidateName">User Name</span>
+													</a>
+													<ul class="submenu">
+														<li><a th:href="@{/user-profile}">My Profile</a></li>
+														<li><a id="logoutButton" href="#">Logout</a></li>
+													</ul>
+												</li>
+												<li id="loginItem" class="nav-item" style="display: none;">
+													<a class="nav-link" th:href="@{/UserLogin}">Log in</a>
+												</li>
+
+											</ul>
+										</nav>
+								</div>
+							</div>
+						</div>
+						<!-- Mobile Menu -->
+						<div class="col-12">
+							<div class="mobile_menu d-block d-lg-none"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- Header End -->
+	</header>
+	<main>
+		<!--? slider Area Start-->
+		<section class="slider-area ">
+			<div class="slider-active">
+				<!-- Single Slider -->
+				<div class="single-slider slider-height d-flex align-items-center">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-6 col-lg-7 col-md-12">
+								<div class="hero__caption">
+									<h1 data-animation="fadeInLeft" data-delay="0.2s">Online Examination<br> Portal</h1>
+									<p data-animation="fadeInLeft" data-delay="0.4s">Build skills with courses,
+										certificates, and degrees online from world-class universities and companies</p>
+									<!--                                    <a href="#" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Join for Free</a>
+-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<section>
+
+			<section>
+				<br>
+				<br>
+
+			</section>
+
+			<!-- *****************************
+		         Language button          
+	    *******************************-->
+
+			<!-- Example split danger button -->
+			<div class="container1">
+				<h1>Select Language</h1>
+				<div class="btn-group">
+					<button type="button" class="btn btn-danger">Language</button>
+					<button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+						data-toggle="dropdown" aria-expanded="false">
+						<span class="visually-hidden">Choose</span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" data-value="English">English</a></li>
+						<li><a class="dropdown-item" data-value="Marathi">मराठी</a></li>
+						<li><a class="dropdown-item" data-value="Hindi">हिंदी</a></li>
+					</ul>
+				</div>
+			</div>
+
+
+		</section>
+
+		<!--<section id="topics-section">
+		        <h2>Topics</h2>
+		        <table class="table table-striped">
+		            <thead>
+		                <tr>
+		                    <th scope="col">Topic ID</th>
+		                    <th scope="col">Topic Name</th>
+							<th scope="col">Description</th>
+							<th scope="col">Take Exam</th>
+		                </tr>
+		            </thead>
+		            <tbody id="topics-table-body">
+		                 Topics will be dynamically inserted here 
+		            </tbody>
+		        </table>
+		    </section>-->
+
+		<!--<section>
+						<div id="topics-container"></div>
+						<div class="quiz_item">
+						<div id="topics-carousel" class="carousel slide" data-ride="carousel">
+						    <div class="carousel-inner" id="topics-container">
+						         Dynamic content will be injected here 
+						    </div>
+						    <a class="carousel-control-prev" href="#topics-carousel" role="button" data-slide="prev">
+						        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						        <span class="sr-only">Previous</span>
+						    </a>
+						    <a class="carousel-control-next" href="#topics-carousel" role="button" data-slide="next">
+						        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						        <span class="sr-only">Next</span>
+						    </a>
+						</div>
+					</div>
+					</section>-->
+
+
+		<section>
+			<div class="container-topic">
+				<div class="quiz owl-carousel" id="topics-container">
+					<!-- Topics will be loaded here dynamically -->
+				</div>
+			</div>
+		</section>
+
+
+
+		<section>
+			<br>
+			<br>
+		</section>
+		<section>
+			<br>
+			<br>
+
+		</section>
+
+		<section>
+
+		</section>
+	</main>
+	<footer>
+		<div class="footer-wrappper footer-bg">
+			<!-- Footer Start-->
+			<div class="footer-area footer-padding">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-xl-4 col-lg-5 col-md-4 col-sm-6">
+							<div class="single-footer-caption mb-50">
+								<div class="single-footer-caption mb-30">
+									<!-- logo -->
+									<div class="footer-logo mb-25">
+										<a href="index.html"><img src="user/assets/img/logo/logo2_footer.png"
+												alt=""></a>
+									</div>
+									<div class="footer-tittle">
+										<div class="footer-pera">
+											<p>The automated process starts as soon as your clothes go into the machine.
+											</p>
+										</div>
+									</div>
+									<!-- social -->
+									<div class="footer-social">
+										<a href="#"><i class="fab fa-twitter"></i></a>
+										<a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+										<a href="#"><i class="fab fa-pinterest-p"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
+							<div class="single-footer-caption mb-50">
+								<div class="footer-tittle">
+									<h4>Our solutions</h4>
+									<ul>
+										<li><a href="#">Design & creatives</a></li>
+										<li><a href="#">Telecommunication</a></li>
+										<li><a href="#">Restaurant</a></li>
+										<li><a href="#">Programing</a></li>
+										<li><a href="#">Architecture</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+							<div class="single-footer-caption mb-50">
+								<div class="footer-tittle">
+									<h4>Support</h4>
+									<ul>
+										<li><a href="#">Design & creatives</a></li>
+										<li><a href="#">Telecommunication</a></li>
+										<li><a href="#">Restaurant</a></li>
+										<li><a href="#">Programing</a></li>
+										<li><a href="#">Architecture</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+							<div class="single-footer-caption mb-50">
+								<div class="footer-tittle">
+									<h4>Company</h4>
+									<ul>
+										<li><a href="#">Design & creatives</a></li>
+										<li><a href="#">Telecommunication</a></li>
+										<li><a href="#">Restaurant</a></li>
+										<li><a href="#">Programing</a></li>
+										<li><a href="#">Architecture</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<!-- footer-bottom area -->
+			<div class="footer-bottom-area">
+				<div class="container">
+					<div class="footer-border">
+						<div class="row d-flex align-items-center">
+							<div class="col-xl-12 ">
+								<div class="footer-copy-right text-center">
+									<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+										Copyright &copy;
+										<script>document.write(new Date().getFullYear());</script> All rights reserved |
+										Designed and Developed by Ezio Infotech </a>
+										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Footer End-->
+		</div>
+	</footer>
+	<!-- Scroll Up -->
+	<div id="back-top">
+		<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+	</div>
+
+	<!-- JS here -->
+
+	<script src="./user/assets/js/UserTopicScript.js"></script>
+	<script src="./user/assets/js/UserQuestionsScript.js"></script>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+
+	<script src="./user/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+	<!-- Jquery, Popper, Bootstrap -->
+	<script src="./user/assets/js/vendor/jquery-1.12.4.min.js"></script>
+	<script src="./user/assets/js/popper.min.js"></script>
+	<script src="./user/assets/js/bootstrap.min.js"></script>
+	<!-- Jquery Mobile Menu -->
+	<script src="./user/assets/js/jquery.slicknav.min.js"></script>
+
+	<!-- Jquery Slick , Owl-Carousel Plugins -->
+	<script src="./user/assets/js/owl.carousel.min.js"></script>
+	<script src="./user/assets/js/slick.min.js"></script>
+	<!-- One Page, Animated-HeadLin -->
+	<script src="./user/assets/js/wow.min.js"></script>
+	<script src="./user/assets/js/animated.headline.js"></script>
+	<script src="./user/assets/js/jquery.magnific-popup.js"></script>
+
+	<!-- Date Picker -->
+	<script src="./user/assets/js/gijgo.min.js"></script>
+	<!-- Nice-select, sticky -->
+	<script src="./user/assets/js/jquery.nice-select.min.js"></script>
+	<script src="./user/assets/js/jquery.sticky.js"></script>
+	<!-- Progress -->
+	<script src="./user/assets/js/jquery.barfiller.js"></script>
+
+	<!-- counter , waypoint,Hover Direction -->
+	<script src="./user/assets/js/jquery.counterup.min.js"></script>
+	<script src="./user/assets/js/waypoints.min.js"></script>
+	<script src="./user/assets/js/jquery.countdown.min.js"></script>
+	<script src="./user/assets/js/hover-direction-snake.min.js"></script>
+
+	<!-- contact js -->
+	<script src="./user/assets/js/contact.js"></script>
+	<script src="./user/assets/js/jquery.form.js"></script>
+	<script src="./user/assets/js/jquery.validate.min.js"></script>
+	<script src="./user/assets/js/mail-script.js"></script>
+	<script src="./user/assets/js/jquery.ajaxchimp.min.js"></script>
+
+	<!-- Jquery Plugins, main Jquery -->
+	<script src="./user/assets/js/plugins.js"></script>
+	<script src="./user/assets/js/main.js"></script>
+
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+-->
+
+	<script src="./user/assets/js/UserTopicScript.js"></script>
+	<script src="./user/assets/js/UScript.js"></script>
+</body>
+
+</html>

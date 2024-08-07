@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="content">
+            <h1>Welcome to the Online Examination Project</h1>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function checkApiEndpoint(apiEndpoint) {
+                $.ajax({
+                    url: apiEndpoint,
+                    type: 'GET',
+                    success: function(data) {
+                        // Handle success
+                        console.log('API endpoint is valid');
+                    },
+                    error: function(xhr, status, error) {
+                        if (xhr.status === 404) {
+                            window.location.href = "/pageNotFound"; // Redirect to the error page
+                        } else {
+                            console.log('An error occurred: ' + xhr.responseText);
+                        }
+                    }
+                });
+            }
+
+            // Check the current page URL for validity
+            var currentPath = window.location.pathname;
+            if (currentPath !== '/' && currentPath !== '/demo.html') {
+                checkApiEndpoint(window.location.href);
+            }
+        });
+    </script>
+</body>
+</html>

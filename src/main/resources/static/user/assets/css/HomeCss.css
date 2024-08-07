@@ -1,0 +1,37 @@
+
+.container1{
+	display: grid;
+	justify-content: center;
+}
+
+.container1 h1{
+	padding-left: 30px;
+}
+
+.btn-group{
+	/*display: flex;
+	padding-left: 20px;
+	align-items: center;*/
+	 position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+}
+
+
+
+.btn-group button{
+	font-size: 2em;
+}
+
+
+.dropdown-menu li a{
+	align-items: center;
+	padding: 10px;
+	font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+}
